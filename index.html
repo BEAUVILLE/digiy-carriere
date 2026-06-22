@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet" />
+  <meta name="theme-color" content="#0f2f24" />
+  <title>DIGIY CARRIÈRE · Pilote Hôtellerie</title>
+  <style>
+    :root{
+      --bg:#071611;
+      --bg2:#0f2f24;
+      --card:#102b22;
+      --card2:#14382c;
+      --gold:#f3c76a;
+      --gold2:#ffe0a0;
+      --mint:#6ee7b7;
+      --text:#f7f4ea;
+      --muted:#c7d2c3;
+      --line:rgba(255,255,255,.14);
+      --danger:#ffb4a8;
+      --shadow:0 18px 60px rgba(0,0,0,.35);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(243,199,106,.24), transparent 34%),
+        radial-gradient(circle at 90% 12%, rgba(110,231,183,.16), transparent 30%),
+        linear-gradient(160deg, #071611 0%, #0b211a 45%, #06120e 100%);
+      min-height:100vh;
+    }
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    .wrap{width:min(1120px, calc(100% - 32px)); margin:0 auto;}
+    .topbar{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter:blur(16px);
+      background:rgba(7,22,17,.78);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:14px; min-height:72px;}
+    .brand{display:flex; align-items:center; gap:12px; min-width:0}
+    .logo{
+      width:46px;height:46px;border-radius:16px;
+      display:grid;place-items:center;
+      color:#071611;font-weight:950;letter-spacing:-.08em;
+      background:linear-gradient(135deg,var(--gold),var(--mint));
+      box-shadow:0 10px 30px rgba(243,199,106,.2);
+      flex:0 0 auto;
+    }
+    .brand strong{display:block;font-size:1.03rem;letter-spacing:.02em}
+    .brand span{display:block;color:var(--muted);font-size:.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .navlinks{display:flex; gap:8px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+    .pill,.btn{
+      border:1px solid var(--line); border-radius:999px;
+      padding:10px 14px; color:var(--text); background:rgba(255,255,255,.06);
+      min-height:42px; display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    }
+    .btn{cursor:pointer;font-weight:800}
+    .btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold2)); color:#11140b; border-color:rgba(243,199,106,.5)}
+    .btn.green{background:linear-gradient(135deg,#34d399,var(--mint)); color:#052016; border-color:rgba(110,231,183,.5)}
+    .btn.dark{background:rgba(0,0,0,.22)}
+    .btn:hover{transform:translateY(-1px)}
+    .hero{padding:54px 0 28px}
+    .grid{display:grid;grid-template-columns:1.12fr .88fr;gap:22px;align-items:stretch}
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.045));
+      border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .hero-card{padding:34px; position:relative; isolation:isolate}
+    .hero-card:before{
+      content:"";position:absolute;inset:-2px;z-index:-1;opacity:.25;
+      background:radial-gradient(circle at 20% 10%,var(--gold),transparent 32%),radial-gradient(circle at 82% 18%,var(--mint),transparent 28%);
+    }
+    .status{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+    .tag{border:1px solid var(--line); background:rgba(0,0,0,.18); border-radius:999px; padding:8px 12px; color:var(--muted); font-weight:700; font-size:.86rem}
+    h1{font-size:clamp(2.1rem,7vw,5rem);line-height:.94;margin:0 0 18px;letter-spacing:-.055em}
+    .lead{font-size:clamp(1.03rem,2.4vw,1.36rem);line-height:1.55;color:#eee7d5;max-width:760px;margin:0 0 24px}
+    .doctrine{
+      display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:24px 0;
+    }
+    .doctrine div{padding:14px;border-radius:18px;background:rgba(0,0,0,.2);border:1px solid var(--line);min-height:92px}
+    .doctrine b{display:block;color:var(--gold);font-size:1.05rem;margin-bottom:6px}
+    .doctrine span{color:var(--muted);font-size:.9rem;line-height:1.35}
+    .side{padding:24px;display:flex;flex-direction:column;gap:16px}
+    .notice{border:1px solid rgba(255,180,168,.35);background:rgba(255,180,168,.08);border-radius:20px;padding:16px;color:#ffe7e2;line-height:1.45}
+    .notice b{color:#ffd2ca}
+    .quote{background:rgba(243,199,106,.1);border:1px solid rgba(243,199,106,.28);padding:18px;border-radius:20px;line-height:1.55;color:#fff6de}
+    section{padding:28px 0}
+    .section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:16px}
+    h2{margin:0;font-size:clamp(1.65rem,4vw,2.55rem);letter-spacing:-.035em}
+    .sub{color:var(--muted);line-height:1.5;margin:8px 0 0;max-width:760px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .mini{padding:22px;border-radius:22px;background:rgba(255,255,255,.065);border:1px solid var(--line)}
+    .mini h3{margin:0 0 9px;font-size:1.17rem;color:var(--gold2)}
+    .mini p{margin:0;color:var(--muted);line-height:1.52}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:step}
+    .step{padding:20px;border-radius:22px;border:1px solid var(--line);background:rgba(0,0,0,.18);position:relative;min-height:168px}
+    .step:before{counter-increment:step;content:counter(step);width:34px;height:34px;border-radius:12px;display:grid;place-items:center;background:var(--gold);color:#151107;font-weight:950;margin-bottom:14px}
+    .step b{display:block;margin-bottom:8px;font-size:1.05rem}.step span{color:var(--muted);line-height:1.45}
+    .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+    .panel{padding:24px;border-radius:var(--radius);background:rgba(255,255,255,.06);border:1px solid var(--line);box-shadow:var(--shadow)}
+    label{display:block;font-weight:800;margin:0 0 8px;color:#fff6de}
+    input,select,textarea{
+      width:100%;border:1px solid var(--line);border-radius:16px;background:rgba(0,0,0,.25);color:var(--text);padding:13px 14px;outline:none;
+    }
+    textarea{min-height:96px;resize:vertical}
+    .fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field.full{grid-column:1/-1}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .output{
+      white-space:pre-wrap;line-height:1.48;color:#fbf7ec;background:rgba(0,0,0,.25);border:1px dashed rgba(243,199,106,.45);border-radius:18px;padding:18px;min-height:220px;
+    }
+    .small{font-size:.88rem;color:var(--muted);line-height:1.45}.small strong{color:#fff}
+    .pitch{display:grid;grid-template-columns:1fr .9fr;gap:16px}
+    .pitch-box{padding:24px;border-radius:24px;background:linear-gradient(180deg,rgba(243,199,106,.13),rgba(255,255,255,.05));border:1px solid rgba(243,199,106,.28)}
+    .pitch-box p{font-size:1.06rem;line-height:1.62;margin:0;color:#fff5da}.pitch-box b{color:var(--gold)}
+    .checklist{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    .checklist li{padding:13px 14px;border-radius:16px;background:rgba(0,0,0,.18);border:1px solid var(--line);color:var(--muted);line-height:1.4}
+    .checklist li:before{content:"✓";color:var(--mint);font-weight:950;margin-right:9px}
+    .footer{padding:38px 0 48px;color:var(--muted);text-align:center}.footer strong{color:var(--gold)}
+    .toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(140%);background:#fff8e8;color:#11140b;border-radius:999px;padding:12px 16px;font-weight:900;box-shadow:0 16px 45px rgba(0,0,0,.3);transition:.25s;z-index:50}.toast.show{transform:translateX(-50%) translateY(0)}
+    @media(max-width:900px){
+      .grid,.formgrid,.pitch{grid-template-columns:1fr}.doctrine,.steps{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column;padding:12px 0}.navlinks{justify-content:flex-start}.hero-card{padding:24px}.side{padding:20px}.fields{grid-template-columns:1fr}.btn,.pill{width:auto}.section-title{display:block}
+    }
+    @media(max-width:560px){.wrap{width:min(100% - 22px,1120px)}.doctrine,.steps{grid-template-columns:1fr}.hero{padding-top:30px}.navlinks .pill{display:none}.btn{width:100%}.actions .btn{width:100%}.logo{width:42px;height:42px}.brand span{white-space:normal}.hero-card,.panel,.side{border-radius:22px} }
+    @media print{.topbar,.actions,.toast{display:none!important}body{background:#fff;color:#111}.card,.panel,.mini,.step,.pitch-box{box-shadow:none;background:#fff;color:#111;border-color:#ddd}.lead,.sub,.small,.mini p,.step span,.checklist li{color:#333}h1,h2,h3,.mini h3{color:#111}.quote,.notice{background:#fff;color:#111;border-color:#ddd}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap nav">
+      <a href="#top" class="brand" aria-label="Accueil DIGIY CARRIÈRE">
+        <div class="logo">DY</div>
+        <div>
+          <strong>DIGIY CARRIÈRE</strong>
+          <span>Pilote fermé · Hôtellerie & restauration</span>
+        </div>
+      </a>
+      <div class="navlinks">
+        <a class="pill" href="#concept">Concept</a>
+        <a class="pill" href="#pilote">Pilote</a>
+        <a class="pill" href="#fiche">Fiche talent</a>
+        <a class="btn primary" href="#pitch">Pitch directeur</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="top">
+    <div class="wrap hero">
+      <div class="grid">
+        <div class="card hero-card">
+          <div class="status">
+            <span class="tag">Module interne</span>
+            <span class="tag">Non relié à la vitrine DIGIYLYFE</span>
+            <span class="tag">Pilote école hôtelière</span>
+          </div>
+          <h1>Talents hôtellerie. Profil métier. QR professionnel.</h1>
+          <p class="lead">DIGIY CARRIÈRE valorise les élèves formés et les stagiaires terrain avec une fiche professionnelle claire, partageable et vérifiable, destinée aux employeurs locaux comme internationaux.</p>
+          <div class="actions">
+            <a class="btn green" href="#fiche">Créer une fiche talent</a>
+            <button class="btn dark" type="button" onclick="copyText('directeurPitch')">Copier le pitch directeur</button>
+          </div>
+          <div class="doctrine" aria-label="Doctrine DIGIY CARRIÈRE">
+            <div><b>L’école forme</b><span>La base métier, la discipline, l’hygiène et les gestes professionnels.</span></div>
+            <div><b>Le stage confirme</b><span>L’entreprise observe le sérieux, la ponctualité et le savoir-faire réel.</span></div>
+            <div><b>DIGIY valorise</b><span>Profil QR, CV, vidéo courte, preuves et présentation professionnelle.</span></div>
+            <div><b>L’employeur choisit</b><span>Contrat, hébergement et procédure restent du côté employeur.</span></div>
+          </div>
+        </div>
+
+        <aside class="card side">
+          <div class="quote">
+            <strong>Positionnement validé</strong><br />
+            Le stage terrain prouve le savoir-faire. DIGIY transforme cette preuve en profil professionnel visible.
+          </div>
+          <div class="notice">
+            <b>Protection obligatoire :</b><br />
+            DIGIY CARRIÈRE prépare et valorise les profils professionnels. Ce service ne garantit ni emploi, ni contrat, ni visa, ni départ.
+          </div>
+          <div class="mini">
+            <h3>Pourquoi rester discret ?</h3>
+            <p>Le module touche à la carrière, à l’international et à l’ambition. On teste d’abord avec une école et 10 profils solides avant toute ouverture publique.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <section id="concept">
+      <div class="wrap">
+        <div class="section-title">
+          <div>
+            <h2>Le rôle exact de DIGIY</h2>
+            <p class="sub">DIGIY ne remplace ni l’école, ni l’entreprise, ni l’employeur. DIGIY ajoute la couche digitale qui rend le parcours visible, clair et partageable.</p>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="mini"><h3>Pour l’école</h3><p>Valoriser les meilleurs élèves, montrer la qualité du parcours, renforcer l’image auprès des entreprises partenaires.</p></div>
+          <div class="mini"><h3>Pour l’élève</h3><p>Obtenir une fiche métier propre, un CV clair, une vidéo courte, un QR professionnel et une préparation entretien.</p></div>
+          <div class="mini"><h3>Pour l’employeur</h3><p>Recevoir un profil lisible : formation, stage, compétences observées, disponibilité, sérieux et contact encadré.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pilote">
+      <div class="wrap">
+        <h2>Pilote fermé · 10 profils</h2>
+        <p class="sub">Objectif : tester le parcours avec peu de profils, bien choisis, avant toute diffusion large.</p>
+        <div class="steps" style="margin-top:16px">
+          <div class="step"><b>Sélection école</b><span>Le directeur ou l’équipe pédagogique propose les élèves sérieux et prêts à être valorisés.</span></div>
+          <div class="step"><b>Retour stage</b><span>L’entreprise de stage confirme les compétences observées, le comportement et la fiabilité.</span></div>
+          <div class="step"><b>Fiche DIGIY</b><span>DIGIY prépare CV, profil QR, mini-présentation, vidéo courte et résumé professionnel.</span></div>
+          <div class="step"><b>Présentation</b><span>Les profils sont présentés uniquement à des employeurs ou partenaires sérieux et identifiés.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fiche">
+      <div class="wrap">
+        <h2>Fiche talent DIGIY</h2>
+        <p class="sub">Remplis les champs, puis génère une fiche courte prête à copier pour WhatsApp, e-mail ou entretien avec le directeur.</p>
+        <div class="formgrid" style="margin-top:16px">
+          <div class="panel">
+            <div class="fields">
+              <div class="field"><label for="nom">Nom du talent</label><input id="nom" placeholder="Ex : Awa Diop" /></div>
+              <div class="field"><label for="metier">Métier</label><select id="metier"><option>Cuisine</option><option>Service</option><option>Réception</option><option>Chambre / étage</option><option>Plonge</option><option>Bar</option><option>Pâtisserie</option><option>Polyvalent hôtelier</option></select></div>
+              <div class="field"><label for="ecole">École</label><input id="ecole" placeholder="Nom de l’école hôtelière" /></div>
+              <div class="field"><label for="stage">Entreprise de stage</label><input id="stage" placeholder="Hôtel, restaurant, résidence..." /></div>
+              <div class="field"><label for="niveau">Niveau français</label><select id="niveau"><option>Bon</option><option>Moyen</option><option>À renforcer</option><option>Très bon</option></select></div>
+              <div class="field"><label for="statut">Statut</label><select id="statut"><option>Prêt local</option><option>Prêt entretien</option><option>Prêt international</option><option>À renforcer</option></select></div>
+              <div class="field full"><label for="competences">Compétences observées</label><textarea id="competences" placeholder="Ex : service en salle, hygiène, ponctualité, relation client, tenue professionnelle..."></textarea></div>
+              <div class="field full"><label for="retour">Retour entreprise de stage</label><textarea id="retour" placeholder="Ex : sérieux, ponctuel, bonne présentation, apprend vite..."></textarea></div>
+              <div class="field full"><label for="contact">Contact / WhatsApp</label><input id="contact" placeholder="À compléter" /></div>
+            </div>
+            <div class="actions">
+              <button class="btn green" type="button" onclick="generateProfile()">Générer la fiche</button>
+              <button class="btn dark" type="button" onclick="saveDraft()">Sauvegarder sur cet appareil</button>
+              <button class="btn dark" type="button" onclick="clearDraft()">Vider</button>
+            </div>
+            <p class="small"><strong>Note :</strong> cette page fonctionne sans serveur. La sauvegarde reste uniquement dans le navigateur utilisé.</p>
+          </div>
+          <div class="panel">
+            <label>Résumé généré</label>
+            <div class="output" id="profileOutput">La fiche apparaîtra ici.</div>
+            <div class="actions">
+              <button class="btn primary" type="button" onclick="copyOutput()">Copier la fiche</button>
+              <button class="btn dark" type="button" onclick="window.print()">Imprimer / PDF</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pitch">
+      <div class="wrap">
+        <h2>Pitch pour le directeur</h2>
+        <p class="sub">Message court à présenter oralement ou à envoyer après la rencontre.</p>
+        <div class="pitch" style="margin-top:16px">
+          <div class="pitch-box">
+            <p id="directeurPitch"><b>Monsieur le Directeur,</b><br><br>Votre école forme déjà des élèves et les entreprises de stage confirment leur savoir-faire sur le terrain. DIGIY CARRIÈRE propose d’ajouter une couche digitale simple : une fiche professionnelle QR pour vos meilleurs profils, avec CV, compétences observées, retour de stage, courte présentation et préparation à l’entretien.<br><br>L’objectif n’est pas de remplacer l’école, ni de promettre un départ. L’objectif est de mieux valoriser les élèves sérieux auprès d’employeurs locaux ou internationaux, dans un cadre clair, propre et professionnel.<br><br><b>L’école forme. L’entreprise de stage confirme. DIGIY valorise. L’employeur choisit.</b></p>
+          </div>
+          <div class="panel">
+            <h3 style="margin-top:0;color:var(--gold2)">À demander pendant la rencontre</h3>
+            <ul class="checklist">
+              <li>Combien d’élèves sortent chaque année en hôtellerie-restauration ?</li>
+              <li>Quels métiers sont les plus solides : cuisine, service, réception, chambre ?</li>
+              <li>Quelles entreprises accueillent déjà les stagiaires ?</li>
+              <li>L’école peut-elle fournir une évaluation simple par élève ?</li>
+              <li>Peut-on tester un pilote fermé avec 10 profils ?</li>
+              <li>Quel mot officiel utiliser : attestation, évaluation, fiche de compétences ?</li>
+            </ul>
+            <div class="actions"><button class="btn primary" type="button" onclick="copyText('directeurPitch')">Copier le pitch</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <strong>DIGIY CARRIÈRE</strong> · Pilote fermé · Talents hôtellerie · Formation terrain · Profil QR<br />
+      Ce module est préparatoire et non relié à la vitrine publique DIGIYLYFE.
+    </div>
+  </footer>
+  <div class="toast" id="toast">Copié</div>
+
+  <script>
+    const ids = ['nom','metier','ecole','stage','niveau','statut','competences','retour','contact'];
+    const $ = (id) => document.getElementById(id);
+    function val(id){ return ($(id).value || '').trim(); }
+    function toast(msg='Copié'){
+      const t=$('toast'); t.textContent=msg; t.classList.add('show');
+      setTimeout(()=>t.classList.remove('show'),1700);
+    }
+    async function copyText(id){
+      const text = $(id).innerText || $(id).textContent || '';
+      try{ await navigator.clipboard.writeText(text); toast('Texte copié'); }
+      catch(e){ toast('Copie impossible'); }
+    }
+    function generateProfile(){
+      const nom = val('nom') || 'Nom à compléter';
+      const metier = val('metier') || 'Métier à compléter';
+      const ecole = val('ecole') || 'École à compléter';
+      const stage = val('stage') || 'Entreprise de stage à compléter';
+      const niveau = val('niveau') || 'À compléter';
+      const statut = val('statut') || 'À compléter';
+      const competences = val('competences') || 'Compétences à compléter';
+      const retour = val('retour') || 'Retour stage à compléter';
+      const contact = val('contact') || 'Contact à compléter';
+      const txt = `DIGIY CARRIÈRE · FICHE TALENT\n\n👤 Talent : ${nom}\n🍽️ Métier : ${metier}\n🏫 École : ${ecole}\n🏨 Stage terrain : ${stage}\n🗣️ Niveau français : ${niveau}\n📌 Statut : ${statut}\n\n✅ Compétences observées :\n${competences}\n\n📝 Retour entreprise de stage :\n${retour}\n\n📲 Contact : ${contact}\n\nProtection : DIGIY CARRIÈRE prépare et valorise les profils professionnels. Ce service ne garantit ni emploi, ni contrat, ni visa, ni départ.\n\nDoctrine : L’école forme. L’entreprise de stage confirme. DIGIY valorise. L’employeur choisit.`;
+      $('profileOutput').textContent = txt;
+      return txt;
+    }
+    async function copyOutput(){
+      const text = $('profileOutput').textContent.includes('La fiche apparaîtra') ? generateProfile() : $('profileOutput').textContent;
+      try{ await navigator.clipboard.writeText(text); toast('Fiche copiée'); }
+      catch(e){ toast('Copie impossible'); }
+    }
+    function saveDraft(){
+      const data={}; ids.forEach(id=>data[id]=val(id));
+      localStorage.setItem('digiy_carriere_talent_draft', JSON.stringify(data));
+      generateProfile(); toast('Brouillon sauvegardé');
+    }
+    function loadDraft(){
+      try{
+        const data=JSON.parse(localStorage.getItem('digiy_carriere_talent_draft')||'{}');
+        ids.forEach(id=>{ if(data[id]) $(id).value=data[id]; });
+        if(Object.keys(data).length) generateProfile();
+      }catch(e){}
+    }
+    function clearDraft(){
+      ids.forEach(id=>$(id).value=''); localStorage.removeItem('digiy_carriere_talent_draft');
+      $('profileOutput').textContent='La fiche apparaîtra ici.'; toast('Fiche vidée');
+    }
+    loadDraft();
+  </script>
+</body>
+</html>
