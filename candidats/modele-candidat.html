@@ -67,7 +67,7 @@
         <div class="logo">DY</div>
         <div>
           <strong>DIGIY CARRIÈRE · FICHE PUBLIÉE</strong>
-          <span>Lien candidat · QR unique · conformité internationale</span>
+          <span>Lien candidat · QR unique · métiers en tension · conformité</span>
         </div>
       </a>
       <div class="navlinks">
@@ -87,12 +87,14 @@
             <span class="tag">Modèle à dupliquer</span>
             <span class="tag">Un candidat = un lien</span>
             <span class="tag">Un lien = un QR</span>
+            <span class="tag">Métiers en tension</span>
             <span class="tag">Noindex pilote</span>
           </div>
           <h1>Profil candidat publié. Lien propre. QR unique.</h1>
-          <p class="lead">Ce modèle sert à publier une fiche individuelle de candidat DIGIY CARRIÈRE. La fiche peut être partagée sur CV, Indeed, LinkedIn, WhatsApp, e-mail ou support papier via un QR.</p>
+          <p class="lead">Ce modèle sert à publier une fiche individuelle DIGIY CARRIÈRE. Pour la France, la mise en relation internationale doit viser uniquement les cas compatibles avec un métier et une zone géographique en tension, puis laisser l’employeur effectuer les démarches légales.</p>
           <div class="actions">
             <button class="btn green" type="button" onclick="copyPublicLink()">Copier le lien candidat</button>
+            <button class="btn dark" type="button" onclick="copyEmployerMessage()">Copier message employeur</button>
             <button class="btn dark" type="button" onclick="copyIndeedMessage()">Copier message Indeed</button>
           </div>
         </div>
@@ -154,6 +156,10 @@
         <p class="sub">Cette section protège le candidat, l’école, l’employeur et DIGIY CARRIÈRE.</p>
         <div class="cards">
           <div class="compliance">
+            <b>Métiers en tension — France</b><br />
+            Pour une mise en relation vers la France, cette fiche doit être utilisée uniquement si le métier visé et la région d’accueil correspondent à la liste officielle des métiers et zones géographiques caractérisés par des difficultés de recrutement. Référence à vérifier par l’employeur : arrêté du 21 mai 2025, NOR TSSD2508346A, publié au Journal officiel / Légifrance.
+          </div>
+          <div class="compliance">
             <b>Employeur responsable</b><br />
             Pour toute embauche internationale, l’employeur doit respecter les règles du pays d’accueil : contrat conforme, autorisation de travail, visa, titre de séjour ou procédure équivalente lorsque la réglementation l’exige.
           </div>
@@ -173,7 +179,7 @@
       <div class="wrap">
         <div class="quote">
           <strong>Doctrine :</strong><br />
-          L’école forme. L’entreprise de stage confirme. DIGIY valorise. L’employeur choisit. Pour l’international, aucune promesse de départ : seulement des démarches légales, vérifiées et respectueuses de la dignité du candidat.
+          L’école forme. L’entreprise de stage confirme. DIGIY valorise. L’employeur choisit. Pour l’international, aucune promesse de départ : seulement une fiche de visibilité, des métiers réellement recherchés, et des démarches légales vérifiées par l’employeur et les autorités compétentes.
         </div>
       </div>
     </section>
@@ -181,7 +187,7 @@
 
   <footer class="footer">
     <div class="wrap">
-      <strong>DIGIY CARRIÈRE</strong> · Modèle fiche publiée candidat · Lien unique · QR unique · International encadré<br />
+      <strong>DIGIY CARRIÈRE</strong> · Modèle fiche publiée candidat · Lien unique · QR unique · Métiers en tension · International encadré<br />
       Fichier à dupliquer pour chaque candidat validé : <strong>candidats/prenom-nom-metier.html</strong>
     </div>
   </footer>
@@ -205,8 +211,12 @@
       catch(e){ toast('Copie impossible'); }
     }
     function copyPublicLink(){ copyText(pageUrl, 'Lien candidat copié'); }
+    function copyEmployerMessage(){
+      const msg = `Bonjour,\n\nNous vous transmettons un profil DIGIY CARRIÈRE : ${pageUrl}\n\nCette mise en relation concerne uniquement les recrutements compatibles avec les métiers et zones géographiques en tension lorsque le pays d’accueil est la France. L’employeur doit vérifier l’éligibilité du métier, de la région d’accueil et effectuer les démarches obligatoires : contrat conforme, autorisation de travail, visa/titre de séjour ou procédure équivalente auprès des autorités compétentes.\n\nRéférence à vérifier : arrêté du 21 mai 2025, NOR TSSD2508346A, liste des métiers et zones géographiques en tension publiée au Journal officiel / Légifrance.\n\nDIGIY CARRIÈRE valorise le profil et le parcours du candidat, mais ne remplace ni l’employeur, ni les services consulaires, ni les préfectures.`;
+      copyText(msg, 'Message employeur copié');
+    }
     function copyIndeedMessage(){
-      const msg = `Profil DIGIY CARRIÈRE : ${pageUrl}\nProfil candidat vérifiable : formation, stage, compétences observées, lien CV et note de conformité internationale.`;
+      const msg = `Profil DIGIY CARRIÈRE : ${pageUrl}\nProfil candidat vérifiable : formation, stage, compétences observées, lien CV et note de conformité internationale. Pour la France : à utiliser uniquement si le métier et la région d’accueil correspondent aux métiers en tension, selon l’arrêté du 21 mai 2025, NOR TSSD2508346A, à vérifier par l’employeur sur le Journal officiel / Légifrance.`;
       copyText(msg, 'Message Indeed copié');
     }
   </script>
