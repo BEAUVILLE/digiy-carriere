@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet" />
+  <meta name="theme-color" content="#0f2f24" />
+  <title>DIGIY CARRIÈRE · Modèle fiche publiée candidat</title>
+  <style>
+    :root{
+      --bg:#071611;
+      --bg2:#0f2f24;
+      --card:#102b22;
+      --gold:#f3c76a;
+      --gold2:#ffe0a0;
+      --mint:#6ee7b7;
+      --blue:#9bd3ff;
+      --text:#f7f4ea;
+      --muted:#c7d2c3;
+      --line:rgba(255,255,255,.14);
+      --danger:#ffb4a8;
+      --shadow:0 18px 60px rgba(0,0,0,.35);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(243,199,106,.23), transparent 34%),
+        radial-gradient(circle at 90% 12%, rgba(110,231,183,.15), transparent 30%),
+        linear-gradient(160deg, #071611 0%, #0b211a 45%, #06120e 100%);
+      min-height:100vh;
+    }
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .wrap{width:min(1120px, calc(100% - 32px)); margin:0 auto;}
+    .topbar{position:sticky;top:0;z-index:20;backdrop-filter:blur(16px);background:rgba(7,22,17,.80);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:72px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .logo{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;color:#071611;font-weight:950;letter-spacing:-.08em;background:linear-gradient(135deg,var(--gold),var(--mint));box-shadow:0 10px 30px rgba(243,199,106,.2);flex:0 0 auto}
+    .brand strong{display:block;font-size:1.03rem;letter-spacing:.02em}.brand span{display:block;color:var(--muted);font-size:.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .navlinks{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+    .pill,.btn{border:1px solid var(--line);border-radius:999px;padding:10px 14px;color:var(--text);background:rgba(255,255,255,.06);min-height:42px;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+    .btn{cursor:pointer;font-weight:850}.btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#11140b;border-color:rgba(243,199,106,.5)}.btn.green{background:linear-gradient(135deg,#34d399,var(--mint));color:#052016;border-color:rgba(110,231,183,.5)}.btn.dark{background:rgba(0,0,0,.22)}.btn:hover{transform:translateY(-1px)}
+    .hero{padding:46px 0 22px}.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:stretch}
+    .card,.panel{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.045));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.hero-card{padding:32px;position:relative;isolation:isolate}.hero-card:before{content:"";position:absolute;inset:-2px;z-index:-1;opacity:.25;background:radial-gradient(circle at 20% 10%,var(--gold),transparent 32%),radial-gradient(circle at 82% 18%,var(--mint),transparent 28%)}
+    .status{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}.tag{border:1px solid var(--line);background:rgba(0,0,0,.18);border-radius:999px;padding:8px 12px;color:var(--muted);font-weight:750;font-size:.86rem}
+    h1{font-size:clamp(2rem,6vw,4.2rem);line-height:.95;margin:0 0 18px;letter-spacing:-.055em}h2{margin:0;font-size:clamp(1.55rem,3.5vw,2.3rem);letter-spacing:-.035em}h3{margin:0 0 10px;color:var(--gold2)}
+    .lead{font-size:clamp(1.02rem,2.2vw,1.26rem);line-height:1.55;color:#eee7d5;max-width:790px;margin:0 0 22px}.sub{color:var(--muted);line-height:1.5;margin:8px 0 0;max-width:820px}
+    section{padding:24px 0}.side{padding:24px;display:flex;flex-direction:column;gap:16px}.quote{background:rgba(243,199,106,.1);border:1px solid rgba(243,199,106,.28);padding:18px;border-radius:20px;line-height:1.55;color:#fff6de}.notice{border:1px solid rgba(255,180,168,.35);background:rgba(255,180,168,.08);border-radius:20px;padding:16px;color:#ffe7e2;line-height:1.45}.notice b{color:#ffd2ca}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}.mini{padding:18px;border-radius:20px;background:rgba(255,255,255,.065);border:1px solid var(--line)}.mini p{margin:0;color:var(--muted);line-height:1.5}.mini b{color:#fff6de}
+    .profile{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}.panel{padding:24px}.facts{display:grid;gap:10px}.fact{padding:14px;border-radius:16px;background:rgba(0,0,0,.18);border:1px solid var(--line);line-height:1.42}.fact b{display:block;color:var(--gold);margin-bottom:4px}.fact span{color:var(--muted)}
+    .skills{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:10px}.skills li{padding:12px 14px;border-radius:15px;background:rgba(0,0,0,.18);border:1px solid var(--line);color:var(--muted);line-height:1.4}.skills li:before{content:"✓";color:var(--mint);font-weight:950;margin-right:9px}
+    .sharebox{padding:18px;border-radius:20px;background:rgba(155,211,255,.08);border:1px solid rgba(155,211,255,.32);line-height:1.5;color:#eaf6ff}.urlbox{word-break:break-all;margin-top:10px;padding:12px 14px;border-radius:14px;background:rgba(0,0,0,.26);border:1px dashed rgba(155,211,255,.45);color:#fff}.qrwrap{display:grid;place-items:center;padding:18px;border-radius:22px;background:#fff;margin-top:12px}.qrwrap img{width:220px;height:220px;display:block}.small{font-size:.88rem;color:var(--muted);line-height:1.45}.compliance{border:1px solid rgba(155,211,255,.32);background:rgba(155,211,255,.08);border-radius:20px;padding:18px;line-height:1.56;color:#eaf6ff}.compliance b{color:#cbe9ff}.footer{padding:36px 0 46px;color:var(--muted);text-align:center}.footer strong{color:var(--gold)}.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(140%);background:#fff8e8;color:#11140b;border-radius:999px;padding:12px 16px;font-weight:900;box-shadow:0 16px 45px rgba(0,0,0,.3);transition:.25s;z-index:50}.toast.show{transform:translateX(-50%) translateY(0)}
+    @media(max-width:900px){.grid,.profile{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column;padding:12px 0}.navlinks{justify-content:flex-start}.hero-card,.panel,.side{padding:22px}.brand span{white-space:normal}}
+    @media(max-width:560px){.wrap{width:min(100% - 22px,1120px)}.hero{padding-top:30px}.navlinks .pill{display:none}.btn{width:100%}.logo{width:42px;height:42px}.hero-card,.panel,.side{border-radius:22px}.qrwrap img{width:190px;height:190px}}
+    @media print{.topbar,.actions,.toast{display:none!important}body{background:#fff;color:#111}.card,.panel,.mini,.quote,.notice,.compliance{box-shadow:none;background:#fff;color:#111;border-color:#ddd}.lead,.sub,.small,.mini p,.skills li,.fact span{color:#333}h1,h2,h3{color:#111}.tag{color:#111;border-color:#ccc;background:#fff}.urlbox{color:#111;background:#fff;border-color:#999}.qrwrap{border:1px solid #ddd}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap nav">
+      <a href="../index.html" class="brand" aria-label="Retour DIGIY CARRIÈRE">
+        <div class="logo">DY</div>
+        <div>
+          <strong>DIGIY CARRIÈRE · FICHE PUBLIÉE</strong>
+          <span>Lien candidat · QR unique · conformité internationale</span>
+        </div>
+      </a>
+      <div class="navlinks">
+        <a class="pill" href="../index.html">← Pilote</a>
+        <a class="pill" href="../fiche-candidat.html">Atelier fiche</a>
+        <a class="pill" href="#conformite">Conformité</a>
+        <button class="btn primary" type="button" onclick="window.print()">Imprimer / PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="top">
+    <div class="wrap hero">
+      <div class="grid">
+        <div class="card hero-card">
+          <div class="status">
+            <span class="tag">Modèle à dupliquer</span>
+            <span class="tag">Un candidat = un lien</span>
+            <span class="tag">Un lien = un QR</span>
+            <span class="tag">Noindex pilote</span>
+          </div>
+          <h1>Profil candidat publié. Lien propre. QR unique.</h1>
+          <p class="lead">Ce modèle sert à publier une fiche individuelle de candidat DIGIY CARRIÈRE. La fiche peut être partagée sur CV, Indeed, LinkedIn, WhatsApp, e-mail ou support papier via un QR.</p>
+          <div class="actions">
+            <button class="btn green" type="button" onclick="copyPublicLink()">Copier le lien candidat</button>
+            <button class="btn dark" type="button" onclick="copyIndeedMessage()">Copier message Indeed</button>
+          </div>
+        </div>
+
+        <aside class="card side">
+          <div class="sharebox">
+            <b>Lien public / semi-public</b>
+            <div class="urlbox" id="publicLink">Chargement du lien...</div>
+            <div class="qrwrap"><img id="qrImage" alt="QR vers la fiche candidat" /></div>
+            <p class="small">Le QR pointe vers cette fiche. Quand tu dupliques le fichier pour un vrai candidat, le QR suivra automatiquement le nouveau lien.</p>
+          </div>
+          <div class="notice">
+            <b>Protection :</b><br />
+            Ne jamais afficher publiquement passeport, carte d’identité, adresse complète, documents privés ou informations familiales sensibles.
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <section id="profil">
+      <div class="wrap">
+        <h2>Fiche candidat</h2>
+        <p class="sub">Remplacer les textes modèles par les informations validées avec l’école, le candidat et l’entreprise de stage.</p>
+        <div class="profile">
+          <div class="panel">
+            <h3>Identité professionnelle</h3>
+            <div class="facts">
+              <div class="fact"><b>Nom public</b><span>Prénom NOM — ou nom abrégé si le candidat préfère.</span></div>
+              <div class="fact"><b>Métier recherché</b><span>Service en salle · Cuisine · Réception · Chambre · Polyvalent hôtelier.</span></div>
+              <div class="fact"><b>École / formation</b><span>Nom de l’école hôtelière, niveau, année ou promotion.</span></div>
+              <div class="fact"><b>Stage terrain</b><span>Entreprise de stage, période, poste observé, retour encadré.</span></div>
+              <div class="fact"><b>Zone souhaitée</b><span>Sénégal · Afrique de l’Ouest · France · International encadré.</span></div>
+              <div class="fact"><b>Disponibilité</b><span>À compléter : immédiate, après diplôme, stage, contrat local, entretien.</span></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Compétences observées</h3>
+            <ul class="skills">
+              <li>Hygiène, tenue professionnelle et respect des consignes.</li>
+              <li>Ponctualité, sérieux et capacité à apprendre sur le terrain.</li>
+              <li>Relation client, calme, présentation et esprit d’équipe.</li>
+              <li>Compétence métier principale à détailler selon le profil.</li>
+              <li>Langues : français, anglais, wolof ou autre langue utile.</li>
+            </ul>
+            <div class="actions">
+              <a class="btn primary" href="#" aria-label="Lien CV externe à remplacer">CV Indeed / LinkedIn / PDF</a>
+              <a class="btn dark" href="#" aria-label="Contact encadré à remplacer">Contact encadré</a>
+            </div>
+            <p class="small"><strong>Note :</strong> les liens ci-dessus sont à remplacer par les vrais liens validés avant publication.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="conformite">
+      <div class="wrap">
+        <h2>Conformité internationale obligatoire</h2>
+        <p class="sub">Cette section protège le candidat, l’école, l’employeur et DIGIY CARRIÈRE.</p>
+        <div class="cards">
+          <div class="compliance">
+            <b>Employeur responsable</b><br />
+            Pour toute embauche internationale, l’employeur doit respecter les règles du pays d’accueil : contrat conforme, autorisation de travail, visa, titre de séjour ou procédure équivalente lorsque la réglementation l’exige.
+          </div>
+          <div class="compliance">
+            <b>France</b><br />
+            Pour une embauche vers la France, l’employeur doit vérifier la situation administrative du candidat et effectuer les démarches d’autorisation de travail auprès de l’administration française compétente avant toute embauche effective si la loi l’exige.
+          </div>
+          <div class="compliance">
+            <b>Rôle de DIGIY</b><br />
+            DIGIY CARRIÈRE valorise le profil, les compétences et le parcours. DIGIY ne remplace ni l’employeur, ni les services consulaires, ni les préfectures, ni les autorités compétentes.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="doctrine">
+      <div class="wrap">
+        <div class="quote">
+          <strong>Doctrine :</strong><br />
+          L’école forme. L’entreprise de stage confirme. DIGIY valorise. L’employeur choisit. Pour l’international, aucune promesse de départ : seulement des démarches légales, vérifiées et respectueuses de la dignité du candidat.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <strong>DIGIY CARRIÈRE</strong> · Modèle fiche publiée candidat · Lien unique · QR unique · International encadré<br />
+      Fichier à dupliquer pour chaque candidat validé : <strong>candidats/prenom-nom-metier.html</strong>
+    </div>
+  </footer>
+  <div class="toast" id="toast">Copié</div>
+
+  <script>
+    const pageUrl = window.location.href.split('#')[0];
+    const publicLink = document.getElementById('publicLink');
+    const qrImage = document.getElementById('qrImage');
+    publicLink.textContent = pageUrl;
+    qrImage.src = 'https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=' + encodeURIComponent(pageUrl);
+
+    function toast(msg='Copié'){
+      const t=document.getElementById('toast');
+      t.textContent=msg;
+      t.classList.add('show');
+      setTimeout(()=>t.classList.remove('show'),1700);
+    }
+    async function copyText(text, ok){
+      try{ await navigator.clipboard.writeText(text); toast(ok); }
+      catch(e){ toast('Copie impossible'); }
+    }
+    function copyPublicLink(){ copyText(pageUrl, 'Lien candidat copié'); }
+    function copyIndeedMessage(){
+      const msg = `Profil DIGIY CARRIÈRE : ${pageUrl}\nProfil candidat vérifiable : formation, stage, compétences observées, lien CV et note de conformité internationale.`;
+      copyText(msg, 'Message Indeed copié');
+    }
+  </script>
+</body>
+</html>
