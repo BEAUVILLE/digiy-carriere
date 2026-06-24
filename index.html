@@ -165,6 +165,7 @@
           <p class="lead">DIGIY CARRIÈRE valorise les élèves formés et les stagiaires terrain avec une fiche professionnelle claire, partageable et vérifiable, destinée aux employeurs locaux comme internationaux.</p>
           <div class="actions">
             <a class="btn green" href="#fiche">Créer une fiche talent</a>
+            <a class="btn primary" href="./fiche-candidat.html">Ouvrir une fiche candidat</a>
             <button class="btn dark" type="button" onclick="copyText('directeurPitch')">Copier le pitch directeur</button>
           </div>
           <div class="doctrine" aria-label="Doctrine DIGIY CARRIÈRE">
@@ -313,7 +314,26 @@
       const competences = val('competences') || 'Compétences à compléter';
       const retour = val('retour') || 'Retour stage à compléter';
       const contact = val('contact') || 'Contact à compléter';
-      const txt = `DIGIY CARRIÈRE · FICHE TALENT\n\n👤 Talent : ${nom}\n🍽️ Métier : ${metier}\n🏫 École : ${ecole}\n🏨 Stage terrain : ${stage}\n🗣️ Niveau français : ${niveau}\n📌 Statut : ${statut}\n\n✅ Compétences observées :\n${competences}\n\n📝 Retour entreprise de stage :\n${retour}\n\n📲 Contact : ${contact}\n\nProtection : DIGIY CARRIÈRE prépare et valorise les profils professionnels. Ce service ne garantit ni emploi, ni contrat, ni visa, ni départ.\n\nDoctrine : L’école forme. L’entreprise de stage confirme. DIGIY valorise. L’employeur choisit.`;
+      const txt = `DIGIY CARRIÈRE · FICHE TALENT
+
+👤 Talent : ${nom}
+🍽️ Métier : ${metier}
+🏫 École : ${ecole}
+🏨 Stage terrain : ${stage}
+🗣️ Niveau français : ${niveau}
+📌 Statut : ${statut}
+
+✅ Compétences observées :
+${competences}
+
+📝 Retour entreprise de stage :
+${retour}
+
+📲 Contact : ${contact}
+
+Protection : DIGIY CARRIÈRE prépare et valorise les profils professionnels. Ce service ne garantit ni emploi, ni contrat, ni visa, ni départ.
+
+Doctrine : L’école forme. L’entreprise de stage confirme. DIGIY valorise. L’employeur choisit.`;
       $('profileOutput').textContent = txt;
       return txt;
     }
