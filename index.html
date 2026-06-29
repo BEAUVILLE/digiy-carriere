@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow,noarchive,nosnippet" />
   <meta name="theme-color" content="#0f2f24" />
-  <title>DIGIY CARRIÈRE · Pilote Hôtellerie</title>
+  <meta name="description" content="DIGIY CARRIÈRE — pilote fermé hôtellerie : école, stage terrain, fiche talent QR, profils valorisés pour employeurs locaux, France, diaspora et international. Sans promesse d’emploi, contrat, visa ou départ." />
+  <meta name="digiy-build" content="carriere-pilote-international-fr-en-20260629" />
+  <title>DIGIY CARRIÈRE · Pilote international hôtellerie</title>
   <style>
     :root{
       --bg:#071611;
@@ -131,6 +133,81 @@
     }
     @media(max-width:560px){.wrap{width:min(100% - 22px,1120px)}.doctrine,.steps{grid-template-columns:1fr}.hero{padding-top:30px}.navlinks .pill{display:none}.btn{width:100%}.actions .btn{width:100%}.logo{width:42px;height:42px}.brand span{white-space:normal}.hero-card,.panel,.side{border-radius:22px} }
     @media print{.topbar,.actions,.toast{display:none!important}body{background:#fff;color:#111}.card,.panel,.mini,.step,.pitch-box{box-shadow:none;background:#fff;color:#111;border-color:#ddd}.lead,.sub,.small,.mini p,.step span,.checklist li{color:#333}h1,h2,h3,.mini h3{color:#111}.quote,.notice{background:#fff;color:#111;border-color:#ddd}}
+
+    /* === DIGIY CARRIÈRE · International + bilingue === */
+    .langswitch{
+      display:inline-flex;
+      gap:6px;
+      align-items:center;
+      padding:5px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+    }
+    .langswitch button{
+      min-height:34px;
+      border:0;
+      border-radius:999px;
+      padding:0 10px;
+      background:transparent;
+      color:var(--text);
+      font-weight:950;
+      cursor:pointer;
+    }
+    html[lang="fr"] .langswitch button[data-lang="fr"],
+    html[lang="en"] .langswitch button[data-lang="en"]{
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:#11140b;
+    }
+    .territory{
+      padding:24px;
+      border-radius:var(--radius);
+      background:
+        radial-gradient(circle at top left, rgba(243,199,106,.18), transparent 36%),
+        radial-gradient(circle at bottom right, rgba(110,231,183,.14), transparent 42%),
+        rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+    .territory-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:16px;
+    }
+    .territory-item{
+      padding:18px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.18);
+    }
+    .territory-item b{
+      display:block;
+      color:var(--gold2);
+      margin-bottom:8px;
+      font-size:1.02rem;
+    }
+    .territory-item span{
+      display:block;
+      color:var(--muted);
+      line-height:1.45;
+      font-size:.94rem;
+    }
+    .protect-band{
+      margin-top:16px;
+      border:1px solid rgba(255,180,168,.35);
+      background:rgba(255,180,168,.08);
+      border-radius:20px;
+      padding:16px;
+      color:#ffe7e2;
+      line-height:1.48;
+    }
+    @media(max-width:900px){
+      .territory-grid{grid-template-columns:1fr}
+      .langswitch{width:100%;justify-content:center}
+      .langswitch button{flex:1}
+    }
+
   </style>
 </head>
 <body>
@@ -140,17 +217,19 @@
         <div class="logo">DY</div>
         <div>
           <strong>DIGIY CARRIÈRE</strong>
-          <span>Pilote fermé · Hôtellerie & restauration</span>
+          <span data-i18n="brandSub">Pilote fermé · Hôtellerie · France · Diaspora</span>
         </div>
       </a>
       <div class="navlinks">
-        <a class="pill" href="#concept">Concept</a>
-        <a class="pill" href="#pilote">Pilote</a>
-        <a class="pill" href="#programme">Programme stage</a>
-        <a class="pill" href="#fiche">Fiche talent</a>
-        <a class="pill" href="./candidats/modele-candidat.html">Fiche publiée</a>
+        <a class="pill" href="#concept" data-i18n="navConcept">Concept</a>
+        <a class="pill" href="#territoires" data-i18n="navTerritories">Territoires</a>
+        <a class="pill" href="#pilote" data-i18n="navPilot">Pilote</a>
+        <a class="pill" href="#programme" data-i18n="navProgram">Programme stage</a>
+        <a class="pill" href="#fiche" data-i18n="navTalent">Fiche talent</a>
+        <a class="pill" href="./candidats/modele-candidat.html" data-i18n="navPublished">Fiche publiée</a>
         <a class="pill" href="./ecoles/ism-saly.html">ISM Saly</a>
-        <a class="btn primary" href="#pitch">Pitch directeur</a>
+        <a class="btn primary" href="#pitch" data-i18n="navPitch">Pitch directeur</a>
+        <div class="langswitch" aria-label="Choisir la langue"><button type="button" data-lang="fr" onclick="digiyCarriereSetLang('fr')">🇫🇷 FR</button><button type="button" data-lang="en" onclick="digiyCarriereSetLang('en')">🇬🇧 EN</button></div>
       </div>
     </div>
   </div>
@@ -160,65 +239,85 @@
       <div class="grid">
         <div class="card hero-card">
           <div class="status">
-            <span class="tag">Module interne</span>
-            <span class="tag">Non relié à la vitrine DIGIYLYFE</span>
-            <span class="tag">Pilote école hôtelière</span>
+            <span class="tag" data-i18n="tagInternal">Module interne</span>
+            <span class="tag" data-i18n="tagNoPublic">Non relié à la vitrine DIGIYLYFE</span>
+            <span class="tag" data-i18n="tagPilot">Pilote école hôtelière</span>
+            <span class="tag" data-i18n="tagInternational">France · Diaspora · International</span>
           </div>
-          <h1>Talents hôtellerie. Profil métier. QR professionnel.</h1>
-          <p class="lead">DIGIY CARRIÈRE valorise les élèves formés et les stagiaires terrain avec une fiche professionnelle claire, partageable et vérifiable, destinée aux employeurs locaux comme internationaux.</p>
+          <h1 data-i18n="heroTitle">Talents hôtellerie. Profil métier. QR professionnel.</h1>
+          <p class="lead" data-i18n="heroLead">DIGIY CARRIÈRE valorise les élèves formés et les stagiaires terrain avec une fiche professionnelle claire, partageable et vérifiable, destinée aux employeurs locaux, à la France, à la diaspora et à l’international.</p>
           <div class="actions">
-            <a class="btn green" href="#fiche">Créer une fiche talent</a>
-            <a class="btn primary" href="#programme">Programme de stage</a>
-            <a class="btn primary" href="./fiche-candidat.html">Ouvrir une fiche candidat</a>
-            <a class="btn dark" href="./candidats/modele-candidat.html">Porte fiche publiée</a>
-            <a class="btn dark" href="./ecoles/ism-saly.html">Porte ISM Saly</a>
-            <button class="btn dark" type="button" onclick="copyText('directeurPitch')">Copier le pitch directeur</button>
+            <a class="btn green" href="#fiche" data-i18n="btnCreate">Créer une fiche talent</a>
+            <a class="btn primary" href="#programme" data-i18n="btnProgram">Programme de stage</a>
+            <a class="btn primary" href="./fiche-candidat.html" data-i18n="btnCandidate">Ouvrir une fiche candidat</a>
+            <a class="btn dark" href="./candidats/modele-candidat.html" data-i18n="btnPublished">Porte fiche publiée</a>
+            <a class="btn dark" href="./ecoles/ism-saly.html" data-i18n="btnIsm">Porte ISM Saly</a>
+            <button class="btn dark" type="button" onclick="copyText('directeurPitch')" data-i18n="btnCopyPitch">Copier le pitch directeur</button>
           </div>
           <div class="doctrine" aria-label="Doctrine DIGIY CARRIÈRE">
-            <div><b>L’école forme</b><span>La base métier, la discipline, l’hygiène et les gestes professionnels.</span></div>
-            <div><b>Le stage confirme</b><span>L’entreprise observe le sérieux, la ponctualité et le savoir-faire réel.</span></div>
-            <div><b>DIGIY valorise</b><span>Profil QR, CV, vidéo courte, preuves et présentation professionnelle.</span></div>
-            <div><b>L’employeur choisit</b><span>Contrat, hébergement et procédure restent du côté employeur.</span></div>
+            <div><b data-i18n="docSchoolTitle">L’école forme</b><span data-i18n="docSchoolText">La base métier, la discipline, l’hygiène et les gestes professionnels.</span></div>
+            <div><b data-i18n="docStageTitle">Le stage confirme</b><span data-i18n="docStageText">L’entreprise observe le sérieux, la ponctualité et le savoir-faire réel.</span></div>
+            <div><b data-i18n="docDigiyTitle">DIGIY valorise</b><span data-i18n="docDigiyText">Profil QR, CV, vidéo courte, preuves et présentation professionnelle.</span></div>
+            <div><b data-i18n="docEmployerTitle">L’employeur choisit</b><span data-i18n="docEmployerText">Contrat, hébergement, conformité et procédure restent du côté employeur.</span></div>
           </div>
         </div>
 
         <aside class="card side">
           <div class="quote">
-            <strong>Positionnement validé</strong><br />
-            Le stage terrain prouve le savoir-faire. DIGIY transforme cette preuve en profil professionnel visible.
+            <strong data-i18n="positionTitle">Positionnement validé</strong><br />
+            <span data-i18n="positionText">Le stage terrain prouve le savoir-faire. DIGIY transforme cette preuve en profil professionnel visible.</span>
           </div>
           <div class="notice">
-            <b>Protection obligatoire :</b><br />
-            DIGIY CARRIÈRE prépare et valorise les profils professionnels. Ce service ne garantit ni emploi, ni contrat, ni visa, ni départ.
+            <b data-i18n="protectTitle">Protection obligatoire :</b><br />
+            <span data-i18n="protectText">DIGIY CARRIÈRE prépare et valorise les profils professionnels. Ce service ne garantit ni emploi, ni contrat, ni visa, ni départ.</span>
           </div>
           <div class="mini">
-            <h3>Pourquoi rester discret ?</h3>
-            <p>Le module touche à la carrière, à l’international et à l’ambition. On teste d’abord avec une école et 10 profils solides avant toute ouverture publique.</p>
+            <h3 data-i18n="discreetTitle">Pourquoi rester discret ?</h3>
+            <p data-i18n="discreetText">Le module touche à la carrière, à l’international et à l’ambition. On teste d’abord avec une école et 10 profils solides avant toute ouverture publique.</p>
           </div>
         </aside>
       </div>
     </div>
 
+    <section id="territoires">
+      <div class="wrap">
+        <div class="territory">
+          <div class="section-title">
+            <div>
+              <h2 data-i18n="territoryTitle">Territoires d’ouverture</h2>
+              <p class="sub" data-i18n="territoryLead">DIGIY CARRIÈRE reste un pilote fermé, mais sa lecture doit être internationale : l’école forme, le stage confirme, DIGIY valorise, puis l’employeur local, français, diaspora ou international choisit dans son propre cadre légal.</p>
+            </div>
+          </div>
+          <div class="territory-grid">
+            <div class="territory-item"><b data-i18n="territoryAfricaTitle">🇸🇳 Sénégal · preuve école terrain</b><span data-i18n="territoryAfricaText">Écoles hôtelières, ISM Saly, stages, hôtels, restaurants, compétences observées et première vague de profils sérieux.</span></div>
+            <div class="territory-item"><b data-i18n="territoryFranceTitle">🇫🇷 France · employeurs structurés</b><span data-i18n="territoryFranceText">Hôtellerie, restauration, saisonniers, établissements, recruteurs et employeurs qui ont besoin de profils lisibles et préparés.</span></div>
+            <div class="territory-item"><b data-i18n="territoryDiasporaTitle">🌍 Diaspora · pont talents</b><span data-i18n="territoryDiasporaText">Relier écoles, familles, candidats, employeurs et partenaires sans vendre du rêve ni promettre un départ.</span></div>
+          </div>
+          <div class="protect-band" data-i18n-html="territoryProtect"><b>Règle non négociable :</b> DIGIY CARRIÈRE ne promet pas l’emploi, le contrat, le visa, le départ ou l’embauche. L’employeur reste responsable des procédures, de la conformité et de la décision finale.</div>
+        </div>
+      </div>
+    </section>
+
     <section id="concept">
       <div class="wrap">
         <div class="section-title">
           <div>
-            <h2>Le rôle exact de DIGIY</h2>
-            <p class="sub">DIGIY ne remplace ni l’école, ni l’entreprise, ni l’employeur. DIGIY ajoute la couche digitale qui rend le parcours visible, clair et partageable.</p>
+            <h2 data-i18n="conceptTitle">Le rôle exact de DIGIY</h2>
+            <p class="sub" data-i18n="conceptLead">DIGIY ne remplace ni l’école, ni l’entreprise, ni l’employeur. DIGIY ajoute la couche digitale qui rend le parcours visible, clair et partageable.</p>
           </div>
         </div>
         <div class="cards">
-          <div class="mini"><h3>Pour l’école</h3><p>Valoriser les meilleurs élèves, montrer la qualité du parcours, renforcer l’image auprès des entreprises partenaires.</p></div>
-          <div class="mini"><h3>Pour l’élève</h3><p>Obtenir une fiche métier propre, un CV clair, une vidéo courte, un QR professionnel et une préparation entretien.</p></div>
-          <div class="mini"><h3>Pour l’employeur</h3><p>Recevoir un profil lisible : formation, stage, compétences observées, disponibilité, sérieux et contact encadré.</p></div>
+          <div class="mini"><h3 data-i18n="schoolTitle">Pour l’école</h3><p data-i18n="schoolText">Valoriser les meilleurs élèves, montrer la qualité du parcours, renforcer l’image auprès des entreprises partenaires.</p></div>
+          <div class="mini"><h3 data-i18n="studentTitle">Pour l’élève</h3><p data-i18n="studentText">Obtenir une fiche métier propre, un CV clair, une vidéo courte, un QR professionnel et une préparation entretien.</p></div>
+          <div class="mini"><h3 data-i18n="employerTitle">Pour l’employeur</h3><p data-i18n="employerText">Recevoir un profil lisible : formation, stage, compétences observées, disponibilité, sérieux et contact encadré.</p></div>
         </div>
       </div>
     </section>
 
     <section id="pilote">
       <div class="wrap">
-        <h2>Pilote fermé · 10 profils</h2>
-        <p class="sub">Objectif : tester le parcours avec peu de profils, bien choisis, avant toute diffusion large.</p>
+        <h2 data-i18n="pilotTitle">Pilote fermé · 10 profils</h2>
+        <p class="sub" data-i18n="pilotLead">Objectif : tester le parcours avec peu de profils, bien choisis, avant toute diffusion large.</p>
         <div class="steps" style="margin-top:16px">
           <div class="step"><b>Sélection école</b><span>Le directeur ou l’équipe pédagogique propose les élèves sérieux et prêts à être valorisés.</span></div>
           <div class="step"><b>Retour stage</b><span>L’entreprise de stage confirme les compétences observées, le comportement et la fiabilité.</span></div>
@@ -233,8 +332,8 @@
       <div class="wrap">
         <div class="section-title">
           <div>
-            <h2>Programme de stage · Assistant DIGIY CARRIÈRE</h2>
-            <p class="sub">Le programme reste dans DIGIY CARRIÈRE : il forme le stagiaire à structurer la preuve terrain, pas à promettre un emploi. Pilote fermé, école par école, avec peu de profils et beaucoup de sérieux.</p>
+            <h2 data-i18n="programTitle">Programme de stage · Assistant DIGIY CARRIÈRE</h2>
+            <p class="sub" data-i18n="programLead">Le programme reste dans DIGIY CARRIÈRE : il forme le stagiaire à structurer la preuve terrain, pas à promettre un emploi. Pilote fermé, école par école, avec peu de profils et beaucoup de sérieux.</p>
           </div>
         </div>
 
@@ -296,34 +395,34 @@
 
     <section id="fiche">
       <div class="wrap">
-        <h2>Fiche talent DIGIY</h2>
-        <p class="sub">Remplis les champs, puis génère une fiche courte prête à copier pour WhatsApp, e-mail ou entretien avec le directeur.</p>
+        <h2 data-i18n="profileTitle">Fiche talent DIGIY</h2>
+        <p class="sub" data-i18n="profileLead">Remplis les champs, puis génère une fiche courte prête à copier pour WhatsApp, e-mail ou entretien avec le directeur.</p>
         <div class="formgrid" style="margin-top:16px">
           <div class="panel">
             <div class="fields">
-              <div class="field"><label for="nom">Nom du talent</label><input id="nom" placeholder="Ex : Awa Diop" /></div>
-              <div class="field"><label for="metier">Métier</label><select id="metier"><option>Cuisine</option><option>Service</option><option>Réception</option><option>Chambre / étage</option><option>Plonge</option><option>Bar</option><option>Pâtisserie</option><option>Polyvalent hôtelier</option></select></div>
-              <div class="field"><label for="ecole">École</label><input id="ecole" placeholder="Nom de l’école hôtelière" /></div>
-              <div class="field"><label for="stage">Entreprise de stage</label><input id="stage" placeholder="Hôtel, restaurant, résidence..." /></div>
-              <div class="field"><label for="niveau">Niveau français</label><select id="niveau"><option>Bon</option><option>Moyen</option><option>À renforcer</option><option>Très bon</option></select></div>
-              <div class="field"><label for="statut">Statut</label><select id="statut"><option>Prêt local</option><option>Prêt entretien</option><option>Prêt international</option><option>À renforcer</option></select></div>
-              <div class="field full"><label for="competences">Compétences observées</label><textarea id="competences" placeholder="Ex : service en salle, hygiène, ponctualité, relation client, tenue professionnelle..."></textarea></div>
-              <div class="field full"><label for="retour">Retour entreprise de stage</label><textarea id="retour" placeholder="Ex : sérieux, ponctuel, bonne présentation, apprend vite..."></textarea></div>
-              <div class="field full"><label for="contact">Contact / WhatsApp</label><input id="contact" placeholder="À compléter" /></div>
+              <div class="field"><label data-i18n="labelName" for="nom">Nom du talent</label><input id="nom" placeholder="Ex : Awa Diop" /></div>
+              <div class="field"><label data-i18n="labelJob" for="metier">Métier</label><select id="metier"><option>Cuisine</option><option>Service</option><option>Réception</option><option>Chambre / étage</option><option>Plonge</option><option>Bar</option><option>Pâtisserie</option><option>Polyvalent hôtelier</option></select></div>
+              <div class="field"><label data-i18n="labelSchool" for="ecole">École</label><input id="ecole" placeholder="Nom de l’école hôtelière" /></div>
+              <div class="field"><label data-i18n="labelInternship" for="stage">Entreprise de stage</label><input id="stage" placeholder="Hôtel, restaurant, résidence..." /></div>
+              <div class="field"><label data-i18n="labelFrenchLevel" for="niveau">Niveau français</label><select id="niveau"><option>Bon</option><option>Moyen</option><option>À renforcer</option><option>Très bon</option></select></div>
+              <div class="field"><label data-i18n="labelStatus" for="statut">Statut</label><select id="statut"><option>Prêt local</option><option>Prêt entretien</option><option>Prêt international</option><option>À renforcer</option></select></div>
+              <div class="field full"><label data-i18n="labelSkills" for="competences">Compétences observées</label><textarea id="competences" placeholder="Ex : service en salle, hygiène, ponctualité, relation client, tenue professionnelle..."></textarea></div>
+              <div class="field full"><label data-i18n="labelFeedback" for="retour">Retour entreprise de stage</label><textarea id="retour" placeholder="Ex : sérieux, ponctuel, bonne présentation, apprend vite..."></textarea></div>
+              <div class="field full"><label data-i18n="labelContact" for="contact">Contact / WhatsApp</label><input id="contact" placeholder="À compléter" /></div>
             </div>
             <div class="actions">
-              <button class="btn green" type="button" onclick="generateProfile()">Générer la fiche</button>
-              <button class="btn dark" type="button" onclick="saveDraft()">Sauvegarder sur cet appareil</button>
-              <button class="btn dark" type="button" onclick="clearDraft()">Vider</button>
+              <button class="btn green" type="button" onclick="generateProfile()" data-i18n="btnGenerate">Générer la fiche</button>
+              <button class="btn dark" type="button" onclick="saveDraft()" data-i18n="btnSave">Sauvegarder sur cet appareil</button>
+              <button class="btn dark" type="button" onclick="clearDraft()" data-i18n="btnClear">Vider</button>
             </div>
-            <p class="small"><strong>Note :</strong> cette page fonctionne sans serveur. La sauvegarde reste uniquement dans le navigateur utilisé.</p>
+            <p class="small"><strong data-i18n="noteTitle">Note :</strong> <span data-i18n="noteText">cette page fonctionne sans serveur. La sauvegarde reste uniquement dans le navigateur utilisé.</span></p>
           </div>
           <div class="panel">
-            <label>Résumé généré</label>
-            <div class="output" id="profileOutput">La fiche apparaîtra ici.</div>
+            <label data-i18n="labelGenerated">Résumé généré</label>
+            <div class="output" id="profileOutput"><span data-i18n="outputEmpty">La fiche apparaîtra ici.</span></div>
             <div class="actions">
-              <button class="btn primary" type="button" onclick="copyOutput()">Copier la fiche</button>
-              <button class="btn dark" type="button" onclick="window.print()">Imprimer / PDF</button>
+              <button class="btn primary" type="button" onclick="copyOutput()" data-i18n="btnCopyProfile">Copier la fiche</button>
+              <button class="btn dark" type="button" onclick="window.print()" data-i18n="btnPrint">Imprimer / PDF</button>
             </div>
           </div>
         </div>
@@ -332,14 +431,14 @@
 
     <section id="pitch">
       <div class="wrap">
-        <h2>Pitch pour le directeur</h2>
-        <p class="sub">Message court à présenter oralement ou à envoyer après la rencontre.</p>
+        <h2 data-i18n="pitchTitle">Pitch pour le directeur</h2>
+        <p class="sub" data-i18n="pitchLead">Message court à présenter oralement ou à envoyer après la rencontre.</p>
         <div class="pitch" style="margin-top:16px">
           <div class="pitch-box">
             <p id="directeurPitch"><b>Monsieur le Directeur,</b><br><br>Votre école forme déjà des élèves et les entreprises de stage confirment leur savoir-faire sur le terrain. DIGIY CARRIÈRE propose d’ajouter une couche digitale simple : une fiche professionnelle QR pour vos meilleurs profils, avec CV, compétences observées, retour de stage, courte présentation et préparation à l’entretien.<br><br>L’objectif n’est pas de remplacer l’école, ni de promettre un départ. L’objectif est de mieux valoriser les élèves sérieux auprès d’employeurs locaux ou internationaux, dans un cadre clair, propre et professionnel.<br><br><b>L’école forme. L’entreprise de stage confirme. DIGIY valorise. L’employeur choisit.</b></p>
           </div>
           <div class="panel">
-            <h3 style="margin-top:0;color:var(--gold2)">À demander pendant la rencontre</h3>
+            <h3 style="margin-top:0;color:var(--gold2)" data-i18n="meetingTitle">À demander pendant la rencontre</h3>
             <ul class="checklist">
               <li>Combien d’élèves sortent chaque année en hôtellerie-restauration ?</li>
               <li>Quels métiers sont les plus solides : cuisine, service, réception, chambre ?</li>
@@ -357,11 +456,117 @@
 
   <footer class="footer">
     <div class="wrap">
-      <strong>DIGIY CARRIÈRE</strong> · Pilote fermé · Talents hôtellerie · Formation terrain · Profil QR<br />
-      Ce module est préparatoire et non relié à la vitrine publique DIGIYLYFE.
+      <strong>DIGIY CARRIÈRE</strong> · <span data-i18n="footerLine1">Pilote fermé · Talents hôtellerie · France · Diaspora · International · Profil QR</span><br />
+      <span data-i18n="footerLine2">Ce module est préparatoire et non relié à la vitrine publique DIGIYLYFE.</span>
     </div>
   </footer>
   <div class="toast" id="toast">Copié</div>
+
+
+  <script>
+    const DIGIY_CARRIERE_I18N = {
+      fr:{
+        pageTitle:"DIGIY CARRIÈRE · Pilote international hôtellerie",
+        brandSub:"Pilote fermé · Hôtellerie · France · Diaspora",
+        navConcept:"Concept",navTerritories:"Territoires",navPilot:"Pilote",navProgram:"Programme stage",navTalent:"Fiche talent",navPublished:"Fiche publiée",navPitch:"Pitch directeur",
+        tagInternal:"Module interne",tagNoPublic:"Non relié à la vitrine DIGIYLYFE",tagPilot:"Pilote école hôtelière",tagInternational:"France · Diaspora · International",
+        heroTitle:"Talents hôtellerie. Profil métier. QR professionnel.",
+        heroLead:"DIGIY CARRIÈRE valorise les élèves formés et les stagiaires terrain avec une fiche professionnelle claire, partageable et vérifiable, destinée aux employeurs locaux, à la France, à la diaspora et à l’international.",
+        btnCreate:"Créer une fiche talent",btnProgram:"Programme de stage",btnCandidate:"Ouvrir une fiche candidat",btnPublished:"Porte fiche publiée",btnIsm:"Porte ISM Saly",btnCopyPitch:"Copier le pitch directeur",
+        docSchoolTitle:"L’école forme",docSchoolText:"La base métier, la discipline, l’hygiène et les gestes professionnels.",
+        docStageTitle:"Le stage confirme",docStageText:"L’entreprise observe le sérieux, la ponctualité et le savoir-faire réel.",
+        docDigiyTitle:"DIGIY valorise",docDigiyText:"Profil QR, CV, vidéo courte, preuves et présentation professionnelle.",
+        docEmployerTitle:"L’employeur choisit",docEmployerText:"Contrat, hébergement, conformité et procédure restent du côté employeur.",
+        positionTitle:"Positionnement validé",positionText:"Le stage terrain prouve le savoir-faire. DIGIY transforme cette preuve en profil professionnel visible.",
+        protectTitle:"Protection obligatoire :",protectText:"DIGIY CARRIÈRE prépare et valorise les profils professionnels. Ce service ne garantit ni emploi, ni contrat, ni visa, ni départ.",
+        discreetTitle:"Pourquoi rester discret ?",discreetText:"Le module touche à la carrière, à l’international et à l’ambition. On teste d’abord avec une école et 10 profils solides avant toute ouverture publique.",
+        territoryTitle:"Territoires d’ouverture",
+        territoryLead:"DIGIY CARRIÈRE reste un pilote fermé, mais sa lecture doit être internationale : l’école forme, le stage confirme, DIGIY valorise, puis l’employeur local, français, diaspora ou international choisit dans son propre cadre légal.",
+        territoryAfricaTitle:"🇸🇳 Sénégal · preuve école terrain",territoryAfricaText:"Écoles hôtelières, ISM Saly, stages, hôtels, restaurants, compétences observées et première vague de profils sérieux.",
+        territoryFranceTitle:"🇫🇷 France · employeurs structurés",territoryFranceText:"Hôtellerie, restauration, saisonniers, établissements, recruteurs et employeurs qui ont besoin de profils lisibles et préparés.",
+        territoryDiasporaTitle:"🌍 Diaspora · pont talents",territoryDiasporaText:"Relier écoles, familles, candidats, employeurs et partenaires sans vendre du rêve ni promettre un départ.",
+        territoryProtect:"<b>Règle non négociable :</b> DIGIY CARRIÈRE ne promet pas l’emploi, le contrat, le visa, le départ ou l’embauche. L’employeur reste responsable des procédures, de la conformité et de la décision finale.",
+        conceptTitle:"Le rôle exact de DIGIY",conceptLead:"DIGIY ne remplace ni l’école, ni l’entreprise, ni l’employeur. DIGIY ajoute la couche digitale qui rend le parcours visible, clair et partageable.",
+        schoolTitle:"Pour l’école",schoolText:"Valoriser les meilleurs élèves, montrer la qualité du parcours, renforcer l’image auprès des entreprises partenaires.",
+        studentTitle:"Pour l’élève",studentText:"Obtenir une fiche métier propre, un CV clair, une vidéo courte, un QR professionnel et une préparation entretien.",
+        employerTitle:"Pour l’employeur",employerText:"Recevoir un profil lisible : formation, stage, compétences observées, disponibilité, sérieux et contact encadré.",
+        pilotTitle:"Pilote fermé · 10 profils",pilotLead:"Objectif : tester le parcours avec peu de profils, bien choisis, avant toute diffusion large.",
+        programTitle:"Programme de stage · Assistant DIGIY CARRIÈRE",programLead:"Le programme reste dans DIGIY CARRIÈRE : il forme le stagiaire à structurer la preuve terrain, pas à promettre un emploi. Pilote fermé, école par école, avec peu de profils et beaucoup de sérieux.",
+        profileTitle:"Fiche talent DIGIY",profileLead:"Remplis les champs, puis génère une fiche courte prête à copier pour WhatsApp, e-mail ou entretien avec le directeur.",
+        labelName:"Nom du talent",labelJob:"Métier",labelSchool:"École",labelInternship:"Entreprise de stage",labelFrenchLevel:"Niveau français",labelStatus:"Statut",labelSkills:"Compétences observées",labelFeedback:"Retour entreprise de stage",labelContact:"Contact / WhatsApp",labelGenerated:"Résumé généré",
+        btnGenerate:"Générer la fiche",btnSave:"Sauvegarder sur cet appareil",btnClear:"Vider",btnCopyProfile:"Copier la fiche",btnPrint:"Imprimer / PDF",outputEmpty:"La fiche apparaîtra ici.",noteTitle:"Note :",noteText:"cette page fonctionne sans serveur. La sauvegarde reste uniquement dans le navigateur utilisé.",
+        pitchTitle:"Pitch pour le directeur",pitchLead:"Message court à présenter oralement ou à envoyer après la rencontre.",meetingTitle:"À demander pendant la rencontre",
+        footerLine1:"Pilote fermé · Talents hôtellerie · France · Diaspora · International · Profil QR",footerLine2:"Ce module est préparatoire et non relié à la vitrine publique DIGIYLYFE.",
+        copied:"Texte copié",copyFail:"Copie impossible",profileCopied:"Fiche copiée",draftSaved:"Brouillon sauvegardé",cleared:"Fiche vidée"
+      },
+      en:{
+        pageTitle:"DIGIY CAREER · International hospitality pilot",
+        brandSub:"Closed pilot · Hospitality · France · Diaspora",
+        navConcept:"Concept",navTerritories:"Territories",navPilot:"Pilot",navProgram:"Internship program",navTalent:"Talent profile",navPublished:"Published profile",navPitch:"Director pitch",
+        tagInternal:"Internal module",tagNoPublic:"Not linked to the public DIGIYLYFE showcase",tagPilot:"Hospitality school pilot",tagInternational:"France · Diaspora · International",
+        heroTitle:"Hospitality talents. Trade profile. Professional QR.",
+        heroLead:"DIGIY CAREER highlights trained students and field interns through a clear, shareable and verifiable professional profile for local employers, France, the diaspora and international opportunities.",
+        btnCreate:"Create a talent profile",btnProgram:"Internship program",btnCandidate:"Open candidate profile",btnPublished:"Published profile door",btnIsm:"ISM Saly door",btnCopyPitch:"Copy director pitch",
+        docSchoolTitle:"The school trains",docSchoolText:"Trade basics, discipline, hygiene and professional gestures.",
+        docStageTitle:"The internship confirms",docStageText:"The host business observes seriousness, punctuality and real know-how.",
+        docDigiyTitle:"DIGIY highlights",docDigiyText:"QR profile, CV, short video, proof and professional presentation.",
+        docEmployerTitle:"The employer decides",docEmployerText:"Contract, accommodation, compliance and procedures remain on the employer’s side.",
+        positionTitle:"Validated positioning",positionText:"The field internship proves know-how. DIGIY turns that proof into a visible professional profile.",
+        protectTitle:"Mandatory protection:",protectText:"DIGIY CAREER prepares and highlights professional profiles. This service does not guarantee employment, a contract, a visa or departure.",
+        discreetTitle:"Why stay discreet?",discreetText:"The module touches career, international mobility and ambition. We test first with one school and 10 solid profiles before any public opening.",
+        territoryTitle:"Opening territories",
+        territoryLead:"DIGIY CAREER remains a closed pilot, but its reading must be international: the school trains, the internship confirms, DIGIY highlights, then the local, French, diaspora or international employer decides within their own legal framework.",
+        territoryAfricaTitle:"🇸🇳 Senegal · school-field proof",territoryAfricaText:"Hospitality schools, ISM Saly, internships, hotels, restaurants, observed skills and a first wave of serious profiles.",
+        territoryFranceTitle:"🇫🇷 France · structured employers",territoryFranceText:"Hotels, restaurants, seasonal work, establishments, recruiters and employers who need readable and prepared profiles.",
+        territoryDiasporaTitle:"🌍 Diaspora · talent bridge",territoryDiasporaText:"Connect schools, families, candidates, employers and partners without selling dreams or promising departure.",
+        territoryProtect:"<b>Non-negotiable rule:</b> DIGIY CAREER does not promise employment, a contract, a visa, departure or hiring. The employer remains responsible for procedures, compliance and the final decision.",
+        conceptTitle:"DIGIY’s exact role",conceptLead:"DIGIY does not replace the school, the host business or the employer. DIGIY adds the digital layer that makes the path visible, clear and shareable.",
+        schoolTitle:"For the school",schoolText:"Highlight the strongest students, show the quality of the pathway and strengthen the school’s image with partner businesses.",
+        studentTitle:"For the student",studentText:"Obtain a clean trade profile, a clear CV, a short video, a professional QR and interview preparation.",
+        employerTitle:"For the employer",employerText:"Receive a readable profile: training, internship, observed skills, availability, seriousness and framed contact.",
+        pilotTitle:"Closed pilot · 10 profiles",pilotLead:"Goal: test the pathway with a small number of well-chosen profiles before any wider distribution.",
+        programTitle:"Internship program · DIGIY CAREER assistant",programLead:"The program stays inside DIGIY CAREER: it trains the intern to structure field proof, not to promise a job. Closed pilot, school by school, with few profiles and serious standards.",
+        profileTitle:"DIGIY talent profile",profileLead:"Fill in the fields, then generate a short profile ready to copy for WhatsApp, email or a meeting with the director.",
+        labelName:"Talent name",labelJob:"Trade",labelSchool:"School",labelInternship:"Host internship business",labelFrenchLevel:"French level",labelStatus:"Status",labelSkills:"Observed skills",labelFeedback:"Host business feedback",labelContact:"Contact / WhatsApp",labelGenerated:"Generated summary",
+        btnGenerate:"Generate profile",btnSave:"Save on this device",btnClear:"Clear",btnCopyProfile:"Copy profile",btnPrint:"Print / PDF",outputEmpty:"The profile will appear here.",noteTitle:"Note:",noteText:"this page works without a server. The save remains only in the current browser.",
+        pitchTitle:"Pitch for the director",pitchLead:"Short message to present orally or send after the meeting.",meetingTitle:"Questions to ask during the meeting",
+        footerLine1:"Closed pilot · Hospitality talents · France · Diaspora · International · QR profile",footerLine2:"This module is preparatory and not linked to the public DIGIYLYFE showcase.",
+        copied:"Text copied",copyFail:"Copy impossible",profileCopied:"Profile copied",draftSaved:"Draft saved",cleared:"Profile cleared"
+      }
+    };
+
+    window.digiyCarriereSetLang=function(lang){
+      lang = lang === "en" ? "en" : "fr";
+      const pack = DIGIY_CARRIERE_I18N[lang];
+      document.documentElement.lang = lang;
+      document.title = pack.pageTitle;
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        if(pack[key] !== undefined) el.textContent = pack[key];
+      });
+      document.querySelectorAll("[data-i18n-html]").forEach(el=>{
+        const key = el.getAttribute("data-i18n-html");
+        if(pack[key] !== undefined) el.innerHTML = pack[key];
+      });
+      try{localStorage.setItem("digiy_carriere_lang",lang)}catch(e){}
+      const out = document.getElementById("profileOutput");
+      if(out && (out.textContent.includes("La fiche apparaîtra") || out.textContent.includes("The profile will appear"))){
+        out.textContent = pack.outputEmpty;
+      }
+    };
+
+    function digiyCarrierePack(){
+      const lang = document.documentElement.lang === "en" ? "en" : "fr";
+      return DIGIY_CARRIERE_I18N[lang];
+    }
+
+    try{
+      const saved = localStorage.getItem("digiy_carriere_lang") || "fr";
+      digiyCarriereSetLang(saved === "en" ? "en" : "fr");
+    }catch(e){
+      digiyCarriereSetLang("fr");
+    }
+  </script>
 
   <script>
     const ids = ['nom','metier','ecole','stage','niveau','statut','competences','retour','contact'];
@@ -373,8 +578,8 @@
     }
     async function copyText(id){
       const text = $(id).innerText || $(id).textContent || '';
-      try{ await navigator.clipboard.writeText(text); toast('Texte copié'); }
-      catch(e){ toast('Copie impossible'); }
+      try{ await navigator.clipboard.writeText(text); toast(digiyCarrierePack().copied); }
+      catch(e){ toast(digiyCarrierePack().copyFail); }
     }
     function generateProfile(){
       const nom = val('nom') || 'Nom à compléter';
@@ -386,7 +591,27 @@
       const competences = val('competences') || 'Compétences à compléter';
       const retour = val('retour') || 'Retour stage à compléter';
       const contact = val('contact') || 'Contact à compléter';
-      const txt = `DIGIY CARRIÈRE · FICHE TALENT
+      const isEn = document.documentElement.lang === "en";
+      const txt = isEn ? `DIGIY CAREER · TALENT PROFILE
+
+👤 Talent: ${nom}
+🍽️ Trade: ${metier}
+🏫 School: ${ecole}
+🏨 Field internship: ${stage}
+🗣️ French level: ${niveau}
+📌 Status: ${statut}
+
+✅ Observed skills:
+${competences}
+
+📝 Host business feedback:
+${retour}
+
+📲 Contact: ${contact}
+
+Protection: DIGIY CAREER prepares and highlights professional profiles. This service does not guarantee employment, a contract, a visa or departure.
+
+Doctrine: The school trains. The host business confirms. DIGIY highlights. The employer decides.` : `DIGIY CARRIÈRE · FICHE TALENT
 
 👤 Talent : ${nom}
 🍽️ Métier : ${metier}
@@ -411,13 +636,13 @@ Doctrine : L’école forme. L’entreprise de stage confirme. DIGIY valorise. L
     }
     async function copyOutput(){
       const text = $('profileOutput').textContent.includes('La fiche apparaîtra') ? generateProfile() : $('profileOutput').textContent;
-      try{ await navigator.clipboard.writeText(text); toast('Fiche copiée'); }
-      catch(e){ toast('Copie impossible'); }
+      try{ await navigator.clipboard.writeText(text); toast(digiyCarrierePack().profileCopied); }
+      catch(e){ toast(digiyCarrierePack().copyFail); }
     }
     function saveDraft(){
       const data={}; ids.forEach(id=>data[id]=val(id));
       localStorage.setItem('digiy_carriere_talent_draft', JSON.stringify(data));
-      generateProfile(); toast('Brouillon sauvegardé');
+      generateProfile(); toast(digiyCarrierePack().draftSaved);
     }
     function loadDraft(){
       try{
@@ -428,10 +653,11 @@ Doctrine : L’école forme. L’entreprise de stage confirme. DIGIY valorise. L
     }
     function clearDraft(){
       ids.forEach(id=>$(id).value=''); localStorage.removeItem('digiy_carriere_talent_draft');
-      $('profileOutput').textContent='La fiche apparaîtra ici.'; toast('Fiche vidée');
+      $('profileOutput').textContent=digiyCarrierePack().outputEmpty; toast(digiyCarrierePack().cleared);
     }
     loadDraft();
   </script>
 </body>
 </html>
+
 
